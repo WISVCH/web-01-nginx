@@ -7,6 +7,7 @@ services:
     mem_limit: 256M
     volumes:
       - ./config:/etc/nginx/conf.d/:ro
+      - ./shared:/etc/nginx/shared/:ro
       - ./ssl:/etc/nginx/ssl/:ro
       - /srv/www:/srv/www:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
