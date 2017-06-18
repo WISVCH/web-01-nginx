@@ -11,4 +11,5 @@ services:
       - ./ssl:/etc/nginx/ssl/:ro
       - /srv/www:/srv/www:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/log/nginx:/var/log/nginx
 
