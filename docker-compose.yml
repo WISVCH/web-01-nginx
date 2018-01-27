@@ -3,6 +3,7 @@ services:
   nginx:
     network_mode: host
     image: nginx:mainline
+    command: [nginx-debug, '-g', 'daemon off;']
     restart: always
     mem_limit: 256M
     volumes:
@@ -12,4 +13,3 @@ services:
       - /srv/www:/srv/www:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - /var/log/nginx:/var/log/nginx
-
