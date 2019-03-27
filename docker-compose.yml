@@ -1,8 +1,9 @@
 version: '2.1'
 services:
   nginx:
+    container_name: nginx
     network_mode: host
-    image: nginx:mainline
+    image: nginx:alpine
     #command: [nginx-debug, '-g', 'daemon off;']
     restart: always
     mem_limit: 256M
@@ -11,6 +12,7 @@ services:
       - ./conf.d:/etc/nginx/conf.d/:ro
       - ./shared:/etc/nginx/shared/:ro
       - ./ssl:/etc/nginx/ssl/:ro
+      - ./other:/etc/nginx/other/:ro
       - /srv/www:/srv/www:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - /var/log/nginx:/var/log/nginx
